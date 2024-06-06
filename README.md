@@ -2,7 +2,7 @@
 O método dos mínimos quadrados é o mesmo que reta de regressão linear símples ou reta de ajuste.
 Interessante estudar esse modelo porque temos aplicações em Machine Learning 🦾.
 
-![Amostras](/imgs/output.png)![Descrição do GIF](/imgs/exemplo_gif.gif)
+![Amostras](/imgs/output.png) ![Descrição do GIF](/imgs/exemplo_gif.gif)
 
 
 ## Método dos Mínimos Quadrados ✔️
@@ -23,8 +23,8 @@ $$ B = \bar{y} - A \bar{x} $$
 onde:
 - **$x_i$**  são os valores da variável independente,
 - **$y_i$** são os valores observados da variável dependente,
-- **$\bar{x}$** é a média dos valores da variável independente,
-- **$\bar{y}$** é a média dos valores da variável dependente,
+- **$\bar{x}$** é a média dos valores da variável independente $$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$,
+- **$\bar{y}$** é a média dos valores da variável dependente $$\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i$$,
 - **$n$** é o número de observações.
 
 ### Equação da Regressão Linear
@@ -57,14 +57,15 @@ onde:
 
 O Coeficiente de Determinação R² é uma métrica que mede a proporção da variabilidade dos dados que é explicada pelo modelo de regressão. Ele varia entre 0 e 1, onde 1 indica um ajuste perfeito e 0 indica que o modelo não explica a variabilidade dos dados.
 
-$$
-R^2 = 1 - \frac {\sum_{i=1}^{n} (y_i - \hat{y}_i)^2} {\sum_{i=1}^{n} (y_i - \bar{y})^2}
-$$
+\[
+R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
+\]
+
 
 onde:
 - **$y_i$** são os valores observados,
 - **$\hat{y}_i$** são os valores preditos pelo modelo,
-- **$\bar{y}$** é a média dos valores observados,
+- **$\bar{y}$** é a média dos valores observados $$\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i$$,
 - **$n$** é o número de observações.
 
 
