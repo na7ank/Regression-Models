@@ -57,9 +57,9 @@ onde:
 
 O Coeficiente de Determinação R² é uma métrica que mede a proporção da variabilidade dos dados que é explicada pelo modelo de regressão. Ele varia entre 0 e 1, onde 1 indica um ajuste perfeito e 0 indica que o modelo não explica a variabilidade dos dados.
 
-\[
-R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
-\]
+$$ 
+R² = 1 - {\frac { \sum_{i=1}^{n} (y_i - \hat{y_i})} { \sum_{i=1}^{n} (y_i - \bar{y})^2 }}
+$$
 
 
 onde:
