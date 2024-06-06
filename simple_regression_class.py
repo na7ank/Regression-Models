@@ -1,22 +1,22 @@
 import math
-import random as rd
-import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 class LinearRegression:
     """
-    Recebe uma lista contendo pontos de valores observados.
+    Recebe um numpy array com as coordenadas das observações [(x1, y1), (x2, y2), ...].
     Queremos criar um modelo de regressão linear e algumas métricas para prever outros valores.
     """
-    def __init__(self, observacoes=False):
+    def __init__(self, coordenadas=False):
         # Pontos Originais ou exemplo
-        if observacoes:
-            self.pontos = observacoes
+        if coordenadas:
+            self.coordenadas_iniciais = coordenadas
         else:
-            sinal = rd.choice([-1,1])
-            self.pontos = [(i, sinal*i + rd.gauss(0, 10)) for i in range(100)]
-        self.numero_pontos = len(self.pontos)
+            sinal = np.random.uniform(-1, 1)
+            self.coordenadas_iniciais = np.array([[i, sinal*i + np.random.normal(0,10)] for i in range(200)])
+
+        self.numero_pontos = len(self.coordenadas_iniciais)
 
         # Regressão
         self.coeficiente_angular, self.coeficiente_linear = self.metodo_minimos_quadrados()
@@ -48,7 +48,7 @@ class LinearRegression:
         A_p2 = 0
         A_p3 = 0
         A_p4 = 0
-        for ponto in self.pontos:
+        for ponto in self.coordenadas_iniciais:
             xi = ponto[0]
             yi = ponto[1]
             
@@ -67,7 +67,7 @@ class LinearRegression:
         Retorna uma lista com os pontos (xi, y^i), 
         Onde y^i é cada valor ajustado para a reta dos mínimos quadrados com coeficientes (A, B)
         """
-        pontos_novos = [(ponto[0], self.coeficiente_angular*ponto[0] + self.coeficiente_angular) for ponto in self.pontos]
+        pontos_novos = np.array([[ponto[0], self.coeficiente_angular*ponto[0] + self.coeficiente_angular] for ponto in self.coordenadas_iniciais])
 
         return pontos_novos
     
@@ -85,16 +85,13 @@ class LinearRegression:
         Cálcula o erro quadrático médio (MSE) e sua raíz (RMSE) para servir de parâmetro de avaliação para o modelo de regressão.
         Calcula o coeficiente de determinação R².
         """
-        predict = [ponto[1] for ponto in self.pontos_regressao]
-        original = [ponto[1] for ponto in self.pontos]
-        mean_original = sum([ponto[1] for ponto in self.pontos]) / self.numero_pontos
+        predict = self.pontos_regressao[:, 1]
+        original = self.coordenadas_iniciais[:, 1]
+        mean_original = original.mean()
 
         # Sums
-        sum_of_squared_error = 0
-        sum_of_squared_origin = 0
-        for i in range(self.numero_pontos):
-            sum_of_squared_error += (predict[i] - original[i])**2
-            sum_of_squared_origin += (original[i] - mean_original)**2
+        sum_of_squared_error = ((predict - original)**2).sum()
+        sum_of_squared_origin = ((original - mean_original)**2).sum()
         
         # RMSE: Root Mean Squared Error
         mean_squared_error = sum_of_squared_error / self.numero_pontos
@@ -116,8 +113,8 @@ class LinearRegression:
         r2 = self.r2
         rmse = self.rmse
         # Plotando Pontos Originais
-        x = [ponto[0] for ponto in self.pontos]
-        y = [ponto[1] for ponto in self.pontos]
+        x = self.coordenadas_iniciais[:, 0]
+        y = self.coordenadas_iniciais[:, 1]
         plt.title('Mínimos Quadrados - Regressão Linear')
         plt.scatter(x, y, color='#0CFA93', alpha=0.6, s=10, label='Observações')
         # Plotando Reta de Regressão
@@ -128,12 +125,13 @@ class LinearRegression:
             txt = f"Reta de Ajuste: y = {round(A, 3)}x + {round(B, 3)}, RMSE = {round(rmse, 3)}, R²={round(r2, 3)}"
         else: 
             txt = f"Reta de Ajuste: y = {round(A, 3)}x {round(B, 3)}, RMSE = {round(rmse, 3)}, R²={round(r2, 3)}"
-        plt.text(min(x), min(y), txt, fontsize=10, color='#282828')
+        plt.text(x.min(), y.min(), txt, fontsize=10, color='#282828')
         plt.legend().set_title("Dados")
         # Exibindo o gráfico
         plt.grid(True)
         plt.show()
 
+    '''
     def tabela(self):
         """
         Retorna um dataframe com os dados originais e previsões
@@ -144,3 +142,6 @@ class LinearRegression:
             'y_ajuste': [ponto[1] for ponto in self.pontos_regressao], 
         })
         return table
+    '''
+
+
