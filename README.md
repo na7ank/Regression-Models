@@ -2,7 +2,8 @@
 O método dos mínimos quadrados é o mesmo que reta de regressão linear símples ou reta de ajuste.
 Interessante estudar esse modelo porque temos aplicações em Machine Learning 🦾.
 
-![Amostras](/imgs/output.png) ![Descrição do GIF](/imgs/exemplo_gif.gif)
+![Imagem 1](/imgs/exemplo_gif.gif)
+
 
 
 ## Método dos Mínimos Quadrados ✔️
