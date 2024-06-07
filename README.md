@@ -14,7 +14,7 @@ Para uma regressão linear simples com uma variável independente, a fórmula do
 **Coeficiente Angular $A$**
 
 $$ 
-A = \frac { \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y}) } { \sum_{i=1}^{n} (x_i - \bar{x})^2 }
+A = {\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y}) } / { \sum_{i=1}^{n} (x_i - \bar{x})^2 }
 $$
 
 **Coeficiente Linear $B$**
@@ -59,7 +59,7 @@ onde:
 O Coeficiente de Determinação R² é uma métrica que mede a proporção da variabilidade dos dados que é explicada pelo modelo de regressão. Ele varia entre 0 e 1, onde 1 indica um ajuste perfeito e 0 indica que o modelo não explica a variabilidade dos dados.
 
 $$ 
-R² = 1 - {\frac { \sum_{i=1}^{n} (y_i - \hat{y_i})} { \sum_{i=1}^{n} (y_i - \bar{y})^2 }}
+R² = 1 - { \sum_{i=1}^{n} (y_i - \hat{y_i})} / { \sum_{i=1}^{n} (y_i - \bar{y})^2 }
 $$
 
 
