@@ -70,5 +70,29 @@ onde:
 - **$\bar{y}$** é a média dos valores observados $$\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i$$,
 - **$n$** é o número de observações.
 
-# Regressão Logística Binária :red_book:
+# Regressão Logística Binária :closed_book:
+
+### A fórmula geral para o modelo de regressão logística binária é:
+
+$$ P(Y = 1 \mid \mathbf{X}) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_nX_n)}} $$
+
+onde:
+- $P(Y = 1 \mid \mathbf{X})$ é a probabilidade de o evento ocorrer (Y = 1) dado o vetor de características $ \mathbf{X} $.
+- $ \beta_0 $ é o intercepto do modelo.
+- $ \beta_1 $, $ \beta_2 $, $ \ldots $, $ \beta_n $ são os coeficientes das variáveis independentes $ X_1, X_2, \ldots , X_n $ (Vetor de características).
+- $e$ é a base do logaritmo natural (aproximadamente 2.71828).
+
+### Forma Logit
+
+Podemos reescrever a equação na forma logit, que é a função log-odds (log das chances):
+
+$$ \text{logit}(P(Y = 1 \mid \mathbf{X})) = \ln\left(\frac{P(Y = 1 \mid \mathbf{X})}{1 - P(Y = 1 \mid \mathbf{X})}\right) = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_nX_n $$
+
+Nesta forma, a regressão logística se parece muito com a regressão linear, mas está modelando o log das chances do evento \(Y = 1\).
+
+### Interpretação dos Coeficientes
+
+- **$\beta_0$ (intercepto):** É o log-odds de $Y = 1$ quando todas as variáveis $X_i$ são $0$.
+- **$\beta_i$ (coeficientes das variáveis):** Representa a mudança no log-odds de $Y = 1$ para uma unidade de mudança na variável $X_i$, mantendo todas as outras variáveis constantes.
+
 
