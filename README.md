@@ -78,8 +78,8 @@ $$ P(Y = 1 \mid \mathbf{X}) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_
 
 onde:
 - $P(Y = 1 \mid \mathbf{X})$ é a probabilidade de o evento ocorrer (Y = 1) dado o vetor de características $ \mathbf{X} $.
-- $ \beta_0 $ é o intercepto do modelo.
-- $ \beta_1 $, $ \beta_2 $, $ \ldots $, $ \beta_n $ são os coeficientes das variáveis independentes $ X_1, X_2, \ldots , X_n $ (Vetor de características).
+- $ beta_0 $ é o intercepto do modelo.
+- $ beta_1 , $ beta_2 , ... , beta_n $ são os coeficientes das variáveis independentes $ X_1, X_2, ... , X_n $ (Vetor de características).
 - $e$ é a base do logaritmo natural (aproximadamente 2.71828).
 
 ### Forma Logit
@@ -92,7 +92,7 @@ Nesta forma, a regressão logística se parece muito com a regressão linear, ma
 
 ### Interpretação dos Coeficientes
 
-- **$\beta_0$ (intercepto):** É o log-odds de $Y = 1$ quando todas as variáveis $X_i$ são $0$.
-- **$\beta_i$ (coeficientes das variáveis):** Representa a mudança no log-odds de $Y = 1$ para uma unidade de mudança na variável $X_i$, mantendo todas as outras variáveis constantes.
+- **$beta_0$ (intercepto):** É o log-odds de $Y = 1$ quando todas as variáveis $X_i$ são $0$.
+- **$beta_i$ (coeficientes das variáveis):** Representa a mudança no log-odds de $Y = 1$ para uma unidade de mudança na variável $X_i$, mantendo todas as outras variáveis constantes.
 
 
