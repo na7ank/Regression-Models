@@ -1,3 +1,4 @@
+# Regressão Linear :blue_book:
 ## Implementação do Método de Mínimos Quadrados e Métricas para Modelo de Regressão Linear com Python
 O método dos mínimos quadrados é o mesmo que reta de regressão linear símples ou reta de ajuste.
 Interessante estudar esse modelo porque temos aplicações em Machine Learning 🦾.
