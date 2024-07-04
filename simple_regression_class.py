@@ -8,9 +8,9 @@ class LinearRegression:
     Recebe um numpy array com as coordenadas das observações [(x1, y1), (x2, y2), ...].
     Queremos criar um modelo de regressão linear e algumas métricas para prever outros valores.
     """
-    def __init__(self, coordenadas=False):
+    def __init__(self, coordenadas=None):
         # Pontos Originais ou exemplo
-        if coordenadas:
+        if coordenadas is not None:
             self.coordenadas_iniciais = coordenadas
         else:
             sinal = np.random.uniform(-1, 1)
